@@ -2,7 +2,7 @@
 
 ##INFORMATION:##
 
-`IATBaseClasses` is a collection of objects that I use in my development of iOS apps.  These are utilities that have been hardened over time to provide great convenience without creating a demand to include a lot of unnecessary code.
+`IATBaseClasses` is a collection of objects that I use in my development of iOS apps.  These are utilities that have been developed over the past few years to provide great convenience without creating a demand to include a lot of unnecessary code.
 
 The primary feature here will probably be the objects that provide a **3D Carousel View** that is highly based on the iOS UITableView and it's related classes.  These classes and their related iOS components are:
 
