@@ -16,6 +16,22 @@
 		0BDA05A415D1D8AC006B4C28 /* libIATBaseClasses.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDA058B15D1D8AC006B4C28 /* libIATBaseClasses.a */; };
 		0BDA05AA15D1D8AC006B4C28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA05A815D1D8AC006B4C28 /* InfoPlist.strings */; };
 		0BDA05AD15D1D8AC006B4C28 /* IATBaseClassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05AC15D1D8AC006B4C28 /* IATBaseClassesTests.m */; };
+		0BDA05BB15D1D953006B4C28 /* CATransformUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05B715D1D953006B4C28 /* CATransformUtilities.m */; };
+		0BDA05BC15D1D953006B4C28 /* CAVectorUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05B915D1D953006B4C28 /* CAVectorUtilities.m */; };
+		0BDA05D015D1D966006B4C28 /* IATViewFader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05BE15D1D966006B4C28 /* IATViewFader.m */; };
+		0BDA05D115D1D966006B4C28 /* IATViewHider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05C015D1D966006B4C28 /* IATViewHider.m */; };
+		0BDA05D215D1D966006B4C28 /* IATViewSizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05C215D1D966006B4C28 /* IATViewSizer.m */; };
+		0BDA05D315D1D966006B4C28 /* IATPerspectiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05C415D1D966006B4C28 /* IATPerspectiveView.m */; };
+		0BDA05D415D1D966006B4C28 /* IATCarouselData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05C615D1D966006B4C28 /* IATCarouselData.m */; };
+		0BDA05D515D1D966006B4C28 /* IATCarouselDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05C815D1D966006B4C28 /* IATCarouselDataViewController.m */; };
+		0BDA05D615D1D966006B4C28 /* IATCarouselTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05CB15D1D966006B4C28 /* IATCarouselTableView.m */; };
+		0BDA05D715D1D966006B4C28 /* IATCarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05CD15D1D966006B4C28 /* IATCarouselTableViewCell.m */; };
+		0BDA05D815D1D966006B4C28 /* IATCarouselTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05CF15D1D966006B4C28 /* IATCarouselTableViewController.m */; };
+		0BDA05DB15D1DB22006B4C28 /* IATIntRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05DA15D1DB22006B4C28 /* IATIntRange.m */; };
+		0BDA05E015D1DBAA006B4C28 /* TPPropertyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05DF15D1DBAA006B4C28 /* TPPropertyAnimation.m */; };
+		0BDA05E215D1DD17006B4C28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDA059F15D1D8AC006B4C28 /* UIKit.framework */; };
+		0BDA05E515D1DD82006B4C28 /* IATLayoutFunction2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05E415D1DD82006B4C28 /* IATLayoutFunction2D.m */; };
+		0BDA05E815D1DE06006B4C28 /* IATTouchableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA05E715D1DE06006B4C28 /* IATTouchableLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +58,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B5DECD015D330B400203546 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		0B5DECD215D3310200203546 /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
 		0BDA058B15D1D8AC006B4C28 /* libIATBaseClasses.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIATBaseClasses.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDA058E15D1D8AC006B4C28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0BDA059215D1D8AC006B4C28 /* IATBaseClasses-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IATBaseClasses-Prefix.pch"; sourceTree = "<group>"; };
@@ -54,6 +72,39 @@
 		0BDA05A915D1D8AC006B4C28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0BDA05AB15D1D8AC006B4C28 /* IATBaseClassesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IATBaseClassesTests.h; sourceTree = "<group>"; };
 		0BDA05AC15D1D8AC006B4C28 /* IATBaseClassesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IATBaseClassesTests.m; sourceTree = "<group>"; };
+		0BDA05B615D1D953006B4C28 /* CATransformUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransformUtilities.h; sourceTree = "<group>"; };
+		0BDA05B715D1D953006B4C28 /* CATransformUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransformUtilities.m; sourceTree = "<group>"; };
+		0BDA05B815D1D953006B4C28 /* CAVectorUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAVectorUtilities.h; sourceTree = "<group>"; };
+		0BDA05B915D1D953006B4C28 /* CAVectorUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAVectorUtilities.m; sourceTree = "<group>"; };
+		0BDA05BA15D1D953006B4C28 /* CGRectUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRectUtilities.h; sourceTree = "<group>"; };
+		0BDA05BD15D1D966006B4C28 /* IATViewFader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATViewFader.h; sourceTree = "<group>"; };
+		0BDA05BE15D1D966006B4C28 /* IATViewFader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATViewFader.m; sourceTree = "<group>"; };
+		0BDA05BF15D1D966006B4C28 /* IATViewHider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATViewHider.h; sourceTree = "<group>"; };
+		0BDA05C015D1D966006B4C28 /* IATViewHider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATViewHider.m; sourceTree = "<group>"; };
+		0BDA05C115D1D966006B4C28 /* IATViewSizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATViewSizer.h; sourceTree = "<group>"; };
+		0BDA05C215D1D966006B4C28 /* IATViewSizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATViewSizer.m; sourceTree = "<group>"; };
+		0BDA05C315D1D966006B4C28 /* IATPerspectiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATPerspectiveView.h; sourceTree = "<group>"; };
+		0BDA05C415D1D966006B4C28 /* IATPerspectiveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATPerspectiveView.m; sourceTree = "<group>"; };
+		0BDA05C515D1D966006B4C28 /* IATCarouselData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATCarouselData.h; sourceTree = "<group>"; };
+		0BDA05C615D1D966006B4C28 /* IATCarouselData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATCarouselData.m; sourceTree = "<group>"; };
+		0BDA05C715D1D966006B4C28 /* IATCarouselDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATCarouselDataViewController.h; sourceTree = "<group>"; };
+		0BDA05C815D1D966006B4C28 /* IATCarouselDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATCarouselDataViewController.m; sourceTree = "<group>"; };
+		0BDA05C915D1D966006B4C28 /* IATCarouselDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IATCarouselDataViewController.xib; sourceTree = "<group>"; };
+		0BDA05CA15D1D966006B4C28 /* IATCarouselTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATCarouselTableView.h; sourceTree = "<group>"; };
+		0BDA05CB15D1D966006B4C28 /* IATCarouselTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATCarouselTableView.m; sourceTree = "<group>"; };
+		0BDA05CC15D1D966006B4C28 /* IATCarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATCarouselTableViewCell.h; sourceTree = "<group>"; };
+		0BDA05CD15D1D966006B4C28 /* IATCarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATCarouselTableViewCell.m; sourceTree = "<group>"; };
+		0BDA05CE15D1D966006B4C28 /* IATCarouselTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATCarouselTableViewController.h; sourceTree = "<group>"; };
+		0BDA05CF15D1D966006B4C28 /* IATCarouselTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATCarouselTableViewController.m; sourceTree = "<group>"; };
+		0BDA05D915D1DB22006B4C28 /* IATIntRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATIntRange.h; sourceTree = "<group>"; };
+		0BDA05DA15D1DB22006B4C28 /* IATIntRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATIntRange.m; sourceTree = "<group>"; };
+		0BDA05DE15D1DBAA006B4C28 /* TPPropertyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPropertyAnimation.h; sourceTree = "<group>"; };
+		0BDA05DF15D1DBAA006B4C28 /* TPPropertyAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPropertyAnimation.m; sourceTree = "<group>"; };
+		0BDA05E115D1DC0F006B4C28 /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
+		0BDA05E315D1DD82006B4C28 /* IATLayoutFunction2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATLayoutFunction2D.h; sourceTree = "<group>"; };
+		0BDA05E415D1DD82006B4C28 /* IATLayoutFunction2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATLayoutFunction2D.m; sourceTree = "<group>"; };
+		0BDA05E615D1DE05006B4C28 /* IATTouchableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATTouchableLabel.h; sourceTree = "<group>"; };
+		0BDA05E715D1DE06006B4C28 /* IATTouchableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATTouchableLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BDA058F15D1D8AC006B4C28 /* Foundation.framework in Frameworks */,
+				0BDA05E215D1DD17006B4C28 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +134,8 @@
 		0BDA058015D1D8AC006B4C28 = {
 			isa = PBXGroup;
 			children = (
+				0B5DECD015D330B400203546 /* README.rtf */,
+				0B5DECD215D3310200203546 /* License.rtf */,
 				0BDA059015D1D8AC006B4C28 /* IATBaseClasses */,
 				0BDA05A515D1D8AC006B4C28 /* IATBaseClassesTests */,
 				0BDA058D15D1D8AC006B4C28 /* Frameworks */,
@@ -113,6 +167,37 @@
 			children = (
 				0BDA059315D1D8AC006B4C28 /* IATBaseClasses.h */,
 				0BDA059515D1D8AC006B4C28 /* IATBaseClasses.m */,
+				0BDA05B615D1D953006B4C28 /* CATransformUtilities.h */,
+				0BDA05B715D1D953006B4C28 /* CATransformUtilities.m */,
+				0BDA05B815D1D953006B4C28 /* CAVectorUtilities.h */,
+				0BDA05B915D1D953006B4C28 /* CAVectorUtilities.m */,
+				0BDA05BA15D1D953006B4C28 /* CGRectUtilities.h */,
+				0BDA05E315D1DD82006B4C28 /* IATLayoutFunction2D.h */,
+				0BDA05E415D1DD82006B4C28 /* IATLayoutFunction2D.m */,
+				0BDA05D915D1DB22006B4C28 /* IATIntRange.h */,
+				0BDA05DA15D1DB22006B4C28 /* IATIntRange.m */,
+				0BDA05BD15D1D966006B4C28 /* IATViewFader.h */,
+				0BDA05BE15D1D966006B4C28 /* IATViewFader.m */,
+				0BDA05BF15D1D966006B4C28 /* IATViewHider.h */,
+				0BDA05C015D1D966006B4C28 /* IATViewHider.m */,
+				0BDA05C115D1D966006B4C28 /* IATViewSizer.h */,
+				0BDA05C215D1D966006B4C28 /* IATViewSizer.m */,
+				0BDA05E615D1DE05006B4C28 /* IATTouchableLabel.h */,
+				0BDA05E715D1DE06006B4C28 /* IATTouchableLabel.m */,
+				0BDA05C315D1D966006B4C28 /* IATPerspectiveView.h */,
+				0BDA05C415D1D966006B4C28 /* IATPerspectiveView.m */,
+				0BDA05CA15D1D966006B4C28 /* IATCarouselTableView.h */,
+				0BDA05CB15D1D966006B4C28 /* IATCarouselTableView.m */,
+				0BDA05CC15D1D966006B4C28 /* IATCarouselTableViewCell.h */,
+				0BDA05CD15D1D966006B4C28 /* IATCarouselTableViewCell.m */,
+				0BDA05CE15D1D966006B4C28 /* IATCarouselTableViewController.h */,
+				0BDA05CF15D1D966006B4C28 /* IATCarouselTableViewController.m */,
+				0BDA05C515D1D966006B4C28 /* IATCarouselData.h */,
+				0BDA05C615D1D966006B4C28 /* IATCarouselData.m */,
+				0BDA05C715D1D966006B4C28 /* IATCarouselDataViewController.h */,
+				0BDA05C815D1D966006B4C28 /* IATCarouselDataViewController.m */,
+				0BDA05C915D1D966006B4C28 /* IATCarouselDataViewController.xib */,
+				0BDA05DC15D1DBAA006B4C28 /* External */,
 				0BDA059115D1D8AC006B4C28 /* Supporting Files */,
 			);
 			path = IATBaseClasses;
@@ -143,6 +228,24 @@
 				0BDA05A815D1D8AC006B4C28 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0BDA05DC15D1DBAA006B4C28 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				0BDA05DD15D1DBAA006B4C28 /* TPPropertyAnimation */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		0BDA05DD15D1DBAA006B4C28 /* TPPropertyAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0BDA05DE15D1DBAA006B4C28 /* TPPropertyAnimation.h */,
+				0BDA05DF15D1DBAA006B4C28 /* TPPropertyAnimation.m */,
+				0BDA05E115D1DC0F006B4C28 /* License.rtf */,
+			);
+			path = TPPropertyAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +347,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BDA059615D1D8AC006B4C28 /* IATBaseClasses.m in Sources */,
+				0BDA05BB15D1D953006B4C28 /* CATransformUtilities.m in Sources */,
+				0BDA05BC15D1D953006B4C28 /* CAVectorUtilities.m in Sources */,
+				0BDA05D015D1D966006B4C28 /* IATViewFader.m in Sources */,
+				0BDA05D115D1D966006B4C28 /* IATViewHider.m in Sources */,
+				0BDA05D215D1D966006B4C28 /* IATViewSizer.m in Sources */,
+				0BDA05D315D1D966006B4C28 /* IATPerspectiveView.m in Sources */,
+				0BDA05D415D1D966006B4C28 /* IATCarouselData.m in Sources */,
+				0BDA05D515D1D966006B4C28 /* IATCarouselDataViewController.m in Sources */,
+				0BDA05D615D1D966006B4C28 /* IATCarouselTableView.m in Sources */,
+				0BDA05D715D1D966006B4C28 /* IATCarouselTableViewCell.m in Sources */,
+				0BDA05D815D1D966006B4C28 /* IATCarouselTableViewController.m in Sources */,
+				0BDA05DB15D1DB22006B4C28 /* IATIntRange.m in Sources */,
+				0BDA05E015D1DBAA006B4C28 /* TPPropertyAnimation.m in Sources */,
+				0BDA05E515D1DD82006B4C28 /* IATLayoutFunction2D.m in Sources */,
+				0BDA05E815D1DE06006B4C28 /* IATTouchableLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +445,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/IATBaseClasses.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IATBaseClasses/IATBaseClasses-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -339,6 +461,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/IATBaseClasses.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IATBaseClasses/IATBaseClasses-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -396,6 +522,7 @@
 				0BDA05B215D1D8AC006B4C28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0BDA05B315D1D8AC006B4C28 /* Build configuration list for PBXNativeTarget "IATBaseClassesTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +531,7 @@
 				0BDA05B515D1D8AC006B4C28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
