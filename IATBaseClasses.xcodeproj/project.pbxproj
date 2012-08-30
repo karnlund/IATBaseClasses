@@ -7,9 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB1A87115EDCC7B00402599 /* libIATBaseClasses.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA058B15D1D8AC006B4C28 /* libIATBaseClasses.a */; };
+		0BB1A88D15EDD1C300402599 /* IATBaseClasses.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BB1A88B15EDD0F800402599 /* IATBaseClasses.h */; };
+		0BB1A88E15EDD2B200402599 /* CATransformUtilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05B615D1D953006B4C28 /* CATransformUtilities.h */; };
+		0BB1A88F15EDD2B200402599 /* CAVectorUtilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05B815D1D953006B4C28 /* CAVectorUtilities.h */; };
+		0BB1A89015EDD2B200402599 /* CGRectUtilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05BA15D1D953006B4C28 /* CGRectUtilities.h */; };
+		0BB1A89115EDD2B200402599 /* IATLayoutFunction2D.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05E315D1DD82006B4C28 /* IATLayoutFunction2D.h */; };
+		0BB1A89215EDD2B200402599 /* IATIntRange.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05D915D1DB22006B4C28 /* IATIntRange.h */; };
+		0BB1A89315EDD2B200402599 /* IATViewFader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05BD15D1D966006B4C28 /* IATViewFader.h */; };
+		0BB1A89415EDD2B200402599 /* IATViewHider.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05BF15D1D966006B4C28 /* IATViewHider.h */; };
+		0BB1A89515EDD2B200402599 /* IATViewSizer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05C115D1D966006B4C28 /* IATViewSizer.h */; };
+		0BB1A89615EDD2B200402599 /* IATTouchableLabel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05E615D1DE05006B4C28 /* IATTouchableLabel.h */; };
+		0BB1A89715EDD2B200402599 /* IATPerspectiveView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05C315D1D966006B4C28 /* IATPerspectiveView.h */; };
+		0BB1A89815EDD2B200402599 /* IATCarouselTableView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05CA15D1D966006B4C28 /* IATCarouselTableView.h */; };
+		0BB1A89915EDD2B200402599 /* IATCarouselTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05CC15D1D966006B4C28 /* IATCarouselTableViewCell.h */; };
+		0BB1A89A15EDD2B200402599 /* IATCarouselTableViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05CE15D1D966006B4C28 /* IATCarouselTableViewController.h */; };
+		0BB1A89B15EDD2B200402599 /* IATCarouselData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05C515D1D966006B4C28 /* IATCarouselData.h */; };
+		0BB1A89C15EDD2B200402599 /* IATCarouselDataViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05C715D1D966006B4C28 /* IATCarouselDataViewController.h */; };
+		0BB1A89D15EDD2B200402599 /* TPPropertyAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA05DE15D1DBAA006B4C28 /* TPPropertyAnimation.h */; };
+		0BB1A8A315EDD79900402599 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB1A8A215EDD79900402599 /* QuartzCore.framework */; };
 		0BDA058F15D1D8AC006B4C28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDA058E15D1D8AC006B4C28 /* Foundation.framework */; };
-		0BDA059415D1D8AC006B4C28 /* IATBaseClasses.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BDA059315D1D8AC006B4C28 /* IATBaseClasses.h */; };
-		0BDA059615D1D8AC006B4C28 /* IATBaseClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA059515D1D8AC006B4C28 /* IATBaseClasses.m */; };
 		0BDA059E15D1D8AC006B4C28 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDA059D15D1D8AC006B4C28 /* SenTestingKit.framework */; };
 		0BDA05A015D1D8AC006B4C28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDA059F15D1D8AC006B4C28 /* UIKit.framework */; };
 		0BDA05A115D1D8AC006B4C28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDA058E15D1D8AC006B4C28 /* Foundation.framework */; };
@@ -51,7 +68,24 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				0BDA059415D1D8AC006B4C28 /* IATBaseClasses.h in CopyFiles */,
+				0BB1A88E15EDD2B200402599 /* CATransformUtilities.h in CopyFiles */,
+				0BB1A88F15EDD2B200402599 /* CAVectorUtilities.h in CopyFiles */,
+				0BB1A89015EDD2B200402599 /* CGRectUtilities.h in CopyFiles */,
+				0BB1A89115EDD2B200402599 /* IATLayoutFunction2D.h in CopyFiles */,
+				0BB1A89215EDD2B200402599 /* IATIntRange.h in CopyFiles */,
+				0BB1A89315EDD2B200402599 /* IATViewFader.h in CopyFiles */,
+				0BB1A89415EDD2B200402599 /* IATViewHider.h in CopyFiles */,
+				0BB1A89515EDD2B200402599 /* IATViewSizer.h in CopyFiles */,
+				0BB1A89615EDD2B200402599 /* IATTouchableLabel.h in CopyFiles */,
+				0BB1A89715EDD2B200402599 /* IATPerspectiveView.h in CopyFiles */,
+				0BB1A89815EDD2B200402599 /* IATCarouselTableView.h in CopyFiles */,
+				0BB1A89915EDD2B200402599 /* IATCarouselTableViewCell.h in CopyFiles */,
+				0BB1A89A15EDD2B200402599 /* IATCarouselTableViewController.h in CopyFiles */,
+				0BB1A89B15EDD2B200402599 /* IATCarouselData.h in CopyFiles */,
+				0BB1A89C15EDD2B200402599 /* IATCarouselDataViewController.h in CopyFiles */,
+				0BB1A89D15EDD2B200402599 /* TPPropertyAnimation.h in CopyFiles */,
+				0BB1A88D15EDD1C300402599 /* IATBaseClasses.h in CopyFiles */,
+				0BB1A87115EDCC7B00402599 /* libIATBaseClasses.a in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,11 +94,11 @@
 /* Begin PBXFileReference section */
 		0B5DECD015D330B400203546 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		0B5DECD215D3310200203546 /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = License.rtf; sourceTree = "<group>"; };
+		0BB1A88B15EDD0F800402599 /* IATBaseClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATBaseClasses.h; sourceTree = "<group>"; };
+		0BB1A8A215EDD79900402599 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0BDA058B15D1D8AC006B4C28 /* libIATBaseClasses.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIATBaseClasses.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDA058E15D1D8AC006B4C28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0BDA059215D1D8AC006B4C28 /* IATBaseClasses-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IATBaseClasses-Prefix.pch"; sourceTree = "<group>"; };
-		0BDA059315D1D8AC006B4C28 /* IATBaseClasses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IATBaseClasses.h; sourceTree = "<group>"; };
-		0BDA059515D1D8AC006B4C28 /* IATBaseClasses.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IATBaseClasses.m; sourceTree = "<group>"; };
 		0BDA059C15D1D8AC006B4C28 /* IATBaseClassesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IATBaseClassesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDA059D15D1D8AC006B4C28 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0BDA059F15D1D8AC006B4C28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -112,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BB1A8A315EDD79900402599 /* QuartzCore.framework in Frameworks */,
 				0BDA058F15D1D8AC006B4C28 /* Foundation.framework in Frameworks */,
 				0BDA05E215D1DD17006B4C28 /* UIKit.framework in Frameworks */,
 			);
@@ -155,6 +190,7 @@
 		0BDA058D15D1D8AC006B4C28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0BB1A8A215EDD79900402599 /* QuartzCore.framework */,
 				0BDA058E15D1D8AC006B4C28 /* Foundation.framework */,
 				0BDA059D15D1D8AC006B4C28 /* SenTestingKit.framework */,
 				0BDA059F15D1D8AC006B4C28 /* UIKit.framework */,
@@ -165,8 +201,7 @@
 		0BDA059015D1D8AC006B4C28 /* IATBaseClasses */ = {
 			isa = PBXGroup;
 			children = (
-				0BDA059315D1D8AC006B4C28 /* IATBaseClasses.h */,
-				0BDA059515D1D8AC006B4C28 /* IATBaseClasses.m */,
+				0BB1A88B15EDD0F800402599 /* IATBaseClasses.h */,
 				0BDA05B615D1D953006B4C28 /* CATransformUtilities.h */,
 				0BDA05B715D1D953006B4C28 /* CATransformUtilities.m */,
 				0BDA05B815D1D953006B4C28 /* CAVectorUtilities.h */,
@@ -346,7 +381,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BDA059615D1D8AC006B4C28 /* IATBaseClasses.m in Sources */,
 				0BDA05BB15D1D953006B4C28 /* CATransformUtilities.m in Sources */,
 				0BDA05BC15D1D953006B4C28 /* CAVectorUtilities.m in Sources */,
 				0BDA05D015D1D966006B4C28 /* IATViewFader.m in Sources */,

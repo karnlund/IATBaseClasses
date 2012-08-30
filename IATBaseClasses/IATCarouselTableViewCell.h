@@ -16,4 +16,7 @@
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)identifier;
 
 - (NSString*)debugDescription;
+
+- (void)prepareForReuse;
+
 @end

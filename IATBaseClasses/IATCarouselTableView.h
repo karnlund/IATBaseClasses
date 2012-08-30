@@ -16,8 +16,8 @@
 
 @interface IATCarouselTableView : UIView
 
-@property (readwrite, nonatomic, weak)	id <IATCarouselViewDataSource> dataSource;
-@property (readwrite, nonatomic, weak)	id <IATCarouselViewDelegate>   delegate;
+@property (readwrite, nonatomic, weak)	IBOutlet id <IATCarouselViewDataSource> dataSource;
+@property (readwrite, nonatomic, weak)	IBOutlet id <IATCarouselViewDelegate>   delegate;
 @property (readwrite, nonatomic, strong) IBOutletCollection(id) NSArray	*cellPrototypes;
 @property(nonatomic,getter=isScrollEnabled) BOOL	scrollEnabled;
 

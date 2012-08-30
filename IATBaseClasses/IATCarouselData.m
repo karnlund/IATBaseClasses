@@ -258,14 +258,14 @@
 	NSUInteger visibleCells = [[self.layoutData objectForKey:kLayoutNumVisibleCells] unsignedIntegerValue];
 	NSInteger half = ((visibleCells) / 2) + 0.5;
 
-	return R5MakeIntRange(-half, visibleCells);
+	return IATMakeIntRange(-half, visibleCells);
 }
 
 - (NSRange)initialVisibleCellRange
 {
 	IATIntRange intRange = [self initialVisibleCellRangeInt];
 	
-	return NSMakeRange(0, (NSUInteger)R5MaxIntRange(intRange));
+	return NSMakeRange(0, (NSUInteger)IATMaxIntRange(intRange));
 }
 
 @end

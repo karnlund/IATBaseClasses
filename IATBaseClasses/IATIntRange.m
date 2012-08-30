@@ -8,26 +8,26 @@
 
 #import "IATIntRange.h"
 
-IATIntRange R5UnionIntRange(IATIntRange range1, IATIntRange range2)
+IATIntRange IATUnionIntRange(IATIntRange range1, IATIntRange range2)
 {
-	NSInteger maxLocation = MAX(R5MaxIntRange(range1), R5MaxIntRange(range2));
+	NSInteger maxLocation = MAX(IATMaxIntRange(range1), IATMaxIntRange(range2));
 	NSInteger minLocation = MIN(range1.location, range2.location);
 	
-	return R5MakeIntRange(minLocation, (NSUInteger)(maxLocation - minLocation));
+	return IATMakeIntRange(minLocation, (NSUInteger)(maxLocation - minLocation));
 }
 
-IATIntRange R5IntersectionIntRange(IATIntRange range1, IATIntRange range2)
+IATIntRange IATIntersectionIntRange(IATIntRange range1, IATIntRange range2)
 {
-	NSInteger maxLocation1 = R5MaxIntRange(range1);
-	NSInteger maxLocation2 = R5MaxIntRange(range2);
+	NSInteger maxLocation1 = IATMaxIntRange(range1);
+	NSInteger maxLocation2 = IATMaxIntRange(range2);
 
 	if ((range1.location <= range2.location) && (maxLocation1 >= range2.location)) {
-		return R5MakeIntRange(range2.location, (NSUInteger)(maxLocation1 - range2.location));
+		return IATMakeIntRange(range2.location, (NSUInteger)(maxLocation1 - range2.location));
 	}
 	else if ((range2.location <= range1.location) && (maxLocation2 >= range1.location)) {
-		return R5MakeIntRange(range1.location, (NSUInteger)(maxLocation2 - range1.location));
+		return IATMakeIntRange(range1.location, (NSUInteger)(maxLocation2 - range1.location));
 	}
-	return R5MakeIntRange(0, 0);
+	return IATMakeIntRange(0, 0);
 }
 
 NSString *NSStringFromIntRange(IATIntRange range)
@@ -37,7 +37,7 @@ NSString *NSStringFromIntRange(IATIntRange range)
 
 IATIntRange IATIntRangeFromString(NSString *aString)
 {
-	return R5MakeIntRange(0, 0);
+	return IATMakeIntRange(0, 0);
 }
 
 NSRange NSRangeFromIntRange(IATIntRange range)
@@ -49,14 +49,14 @@ NSRange NSRangeFromIntRange(IATIntRange range)
 	else
 		unsignedRange.location = 0;
 	
-	NSInteger maxLocation = R5MaxIntRange(range);
+	NSInteger maxLocation = IATMaxIntRange(range);
 	
 	unsignedRange.length = (NSUInteger)maxLocation - unsignedRange.location;
 	
 	return unsignedRange;
 }
 
-@implementation NSValue (R5ValueIntRangeExtensions)
+@implementation NSValue (IATValueIntRangeExtensions)
 
 + (NSValue *)valueWithIntRange:(IATIntRange)range
 {

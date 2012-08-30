@@ -18,32 +18,32 @@ typedef struct _IATIntRange {
 
 typedef IATIntRange *IATIntRangePointer;
 
-NS_INLINE IATIntRange R5MakeIntRange(NSInteger loc, NSUInteger len) {
+NS_INLINE IATIntRange IATMakeIntRange(NSInteger loc, NSUInteger len) {
     IATIntRange r;
     r.location = loc;
     r.length = len;
     return r;
 }
 
-NS_INLINE NSInteger R5MaxIntRange(IATIntRange range) {
+NS_INLINE NSInteger IATMaxIntRange(IATIntRange range) {
     return (range.location + (NSInteger)range.length);
 }
 
-NS_INLINE BOOL R5LocationInIntRange(NSInteger loc, IATIntRange range) {
+NS_INLINE BOOL IATLocationInIntRange(NSInteger loc, IATIntRange range) {
     return (loc - range.location < range.length);
 }
 
-NS_INLINE BOOL R5EqualIntRanges(IATIntRange range1, IATIntRange range2) {
+NS_INLINE BOOL IATEqualIntRanges(IATIntRange range1, IATIntRange range2) {
     return (range1.location == range2.location && range1.length == range2.length);
 }
 
-FOUNDATION_EXPORT IATIntRange R5UnionIntRange(IATIntRange range1, IATIntRange range2);
-FOUNDATION_EXPORT IATIntRange R5IntersectionIntRange(IATIntRange range1, IATIntRange range2);
+FOUNDATION_EXPORT IATIntRange IATUnionIntRange(IATIntRange range1, IATIntRange range2);
+FOUNDATION_EXPORT IATIntRange IATIntersectionIntRange(IATIntRange range1, IATIntRange range2);
 FOUNDATION_EXPORT NSString *NSStringFromIntRange(IATIntRange range);
 FOUNDATION_EXPORT IATIntRange IATIntRangeFromString(NSString *aString);
 FOUNDATION_EXPORT NSRange NSRangeFromIntRange(IATIntRange range);
 
-@interface NSValue (R5ValueIntRangeExtensions)
+@interface NSValue (IATValueIntRangeExtensions)
 
 + (NSValue *)valueWithIntRange:(IATIntRange)range;
 - (IATIntRange)intRangeValue;

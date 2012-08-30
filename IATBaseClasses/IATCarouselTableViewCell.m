@@ -44,8 +44,8 @@
 
 - (NSString*)debugDescription
 {
-	return [NSString stringWithFormat:@"reuseIdentifier:%@", 
-			self.reuseIdentifier];
+	return [NSString stringWithFormat:@"reuseIdentifier:%@\n%@",
+			self.reuseIdentifier, [super debugDescription]];
 }
 
 - (BOOL)isEnabled
@@ -56,6 +56,11 @@
 - (void)setEnabled:(BOOL)newEnableState
 {
 	_enabled = newEnableState;
+}
+
+- (void)prepareForReuse
+{
+	
 }
 
 @end

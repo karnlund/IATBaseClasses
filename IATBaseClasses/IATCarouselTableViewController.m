@@ -23,7 +23,10 @@
 
 - (void)viewDidLoad
 {
-	self.carouselView.delegate = self;
+	if (!self.carouselView.delegate)
+		self.carouselView.delegate = self;
+	if (!self.carouselView.dataSource)
+		self.carouselView.dataSource = self;
     [super viewDidLoad];
 }
 
@@ -31,6 +34,12 @@
 {
     self.carouselView = nil;
     [super viewDidUnload];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.carouselView reloadData];
 }
 
 
@@ -43,12 +52,6 @@
 //	NSLog(@"carousel %p displaying cell %p %@, %@", carousel, cell, indexPath, NSStringFromCGRect(cell.frame));
 }
 
-// Variable height support
-
-//- (CGSize)carouselView:(IATCarouselView *)carousel sizeForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//	return DEFAULT_CELL_SIZE;
-//}
 
 // Selection
 
@@ -62,6 +65,7 @@
 {
 	return indexPath;
 }
+
 
 // Called after the user changes the selection.
 
