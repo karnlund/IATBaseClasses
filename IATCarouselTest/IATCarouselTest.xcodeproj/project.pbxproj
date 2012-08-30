@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B21272715F02E9B0041A9C8 /* libIATBaseClasses.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B21272215F02E2C0041A9C8 /* libIATBaseClasses.a */; };
+		0B24883A15EDBB5F0053A1D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B24883915EDBB5F0053A1D0 /* UIKit.framework */; };
+		0B24883C15EDBB5F0053A1D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B24883B15EDBB5F0053A1D0 /* Foundation.framework */; };
+		0B24883E15EDBB5F0053A1D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B24883D15EDBB5F0053A1D0 /* CoreGraphics.framework */; };
+		0B24884415EDBB5F0053A1D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B24884215EDBB5F0053A1D0 /* InfoPlist.strings */; };
+		0B24884615EDBB5F0053A1D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24884515EDBB5F0053A1D0 /* main.m */; };
+		0B24884A15EDBB5F0053A1D0 /* IATAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24884915EDBB5F0053A1D0 /* IATAppDelegate.m */; };
+		0B24884D15EDBB5F0053A1D0 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B24884B15EDBB5F0053A1D0 /* MainStoryboard_iPhone.storyboard */; };
+		0B24885015EDBB5F0053A1D0 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B24884E15EDBB5F0053A1D0 /* MainStoryboard_iPad.storyboard */; };
+		0BB1A88A15EDD0AB00402599 /* CarouselTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1A88915EDD0AB00402599 /* CarouselTestViewController.m */; };
+		0BB1A8A515EDD7E600402599 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB1A8A415EDD7E600402599 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0B21272115F02E2C0041A9C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B24886215EDBBE70053A1D0 /* IATBaseClasses.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0BDA058B15D1D8AC006B4C28;
+			remoteInfo = IATBaseClasses;
+		};
+		0B21272315F02E2C0041A9C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B24886215EDBBE70053A1D0 /* IATBaseClasses.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0BDA059C15D1D8AC006B4C28;
+			remoteInfo = IATBaseClassesTests;
+		};
+		0B21272515F02E960041A9C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B24886215EDBBE70053A1D0 /* IATBaseClasses.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BDA058A15D1D8AC006B4C28;
+			remoteInfo = IATBaseClasses;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B24883515EDBB5F0053A1D0 /* IATCarouselTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IATCarouselTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B24883915EDBB5F0053A1D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0B24883B15EDBB5F0053A1D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0B24883D15EDBB5F0053A1D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0B24884115EDBB5F0053A1D0 /* IATCarouselTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IATCarouselTest-Info.plist"; sourceTree = "<group>"; };
+		0B24884315EDBB5F0053A1D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B24884515EDBB5F0053A1D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0B24884715EDBB5F0053A1D0 /* IATCarouselTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IATCarouselTest-Prefix.pch"; sourceTree = "<group>"; };
+		0B24884815EDBB5F0053A1D0 /* IATAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IATAppDelegate.h; sourceTree = "<group>"; };
+		0B24884915EDBB5F0053A1D0 /* IATAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IATAppDelegate.m; sourceTree = "<group>"; };
+		0B24884C15EDBB5F0053A1D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		0B24884F15EDBB5F0053A1D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		0B24886215EDBBE70053A1D0 /* IATBaseClasses.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IATBaseClasses.xcodeproj; path = ../IATBaseClasses.xcodeproj; sourceTree = "<group>"; };
+		0BB1A88815EDD0AB00402599 /* CarouselTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselTestViewController.h; sourceTree = "<group>"; };
+		0BB1A88915EDD0AB00402599 /* CarouselTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselTestViewController.m; sourceTree = "<group>"; };
+		0BB1A8A415EDD7E600402599 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B24883215EDBB5F0053A1D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B21272715F02E9B0041A9C8 /* libIATBaseClasses.a in Frameworks */,
+				0BB1A8A515EDD7E600402599 /* QuartzCore.framework in Frameworks */,
+				0B24883A15EDBB5F0053A1D0 /* UIKit.framework in Frameworks */,
+				0B24883C15EDBB5F0053A1D0 /* Foundation.framework in Frameworks */,
+				0B24883E15EDBB5F0053A1D0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B21271D15F02E2C0041A9C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B21272215F02E2C0041A9C8 /* libIATBaseClasses.a */,
+				0B21272415F02E2C0041A9C8 /* IATBaseClassesTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0B24882A15EDBB5F0053A1D0 = {
+			isa = PBXGroup;
+			children = (
+				0B24886215EDBBE70053A1D0 /* IATBaseClasses.xcodeproj */,
+				0B24883F15EDBB5F0053A1D0 /* IATCarouselTest */,
+				0B24883815EDBB5F0053A1D0 /* Frameworks */,
+				0B24883615EDBB5F0053A1D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0B24883615EDBB5F0053A1D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B24883515EDBB5F0053A1D0 /* IATCarouselTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0B24883815EDBB5F0053A1D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BB1A8A415EDD7E600402599 /* QuartzCore.framework */,
+				0B24883915EDBB5F0053A1D0 /* UIKit.framework */,
+				0B24883B15EDBB5F0053A1D0 /* Foundation.framework */,
+				0B24883D15EDBB5F0053A1D0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0B24883F15EDBB5F0053A1D0 /* IATCarouselTest */ = {
+			isa = PBXGroup;
+			children = (
+				0B24884815EDBB5F0053A1D0 /* IATAppDelegate.h */,
+				0B24884915EDBB5F0053A1D0 /* IATAppDelegate.m */,
+				0B24884B15EDBB5F0053A1D0 /* MainStoryboard_iPhone.storyboard */,
+				0B24884E15EDBB5F0053A1D0 /* MainStoryboard_iPad.storyboard */,
+				0BB1A88815EDD0AB00402599 /* CarouselTestViewController.h */,
+				0BB1A88915EDD0AB00402599 /* CarouselTestViewController.m */,
+				0B24884015EDBB5F0053A1D0 /* Supporting Files */,
+			);
+			path = IATCarouselTest;
+			sourceTree = "<group>";
+		};
+		0B24884015EDBB5F0053A1D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B24884115EDBB5F0053A1D0 /* IATCarouselTest-Info.plist */,
+				0B24884215EDBB5F0053A1D0 /* InfoPlist.strings */,
+				0B24884515EDBB5F0053A1D0 /* main.m */,
+				0B24884715EDBB5F0053A1D0 /* IATCarouselTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0B24883415EDBB5F0053A1D0 /* IATCarouselTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B24885615EDBB5F0053A1D0 /* Build configuration list for PBXNativeTarget "IATCarouselTest" */;
+			buildPhases = (
+				0B24883115EDBB5F0053A1D0 /* Sources */,
+				0B24883215EDBB5F0053A1D0 /* Frameworks */,
+				0B24883315EDBB5F0053A1D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B21272615F02E960041A9C8 /* PBXTargetDependency */,
+			);
+			name = IATCarouselTest;
+			productName = IATCarouselTest;
+			productReference = 0B24883515EDBB5F0053A1D0 /* IATCarouselTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B24882C15EDBB5F0053A1D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IAT;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Ingenious Arts and Technologies LLC";
+			};
+			buildConfigurationList = 0B24882F15EDBB5F0053A1D0 /* Build configuration list for PBXProject "IATCarouselTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0B24882A15EDBB5F0053A1D0;
+			productRefGroup = 0B24883615EDBB5F0053A1D0 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0B21271D15F02E2C0041A9C8 /* Products */;
+					ProjectRef = 0B24886215EDBBE70053A1D0 /* IATBaseClasses.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0B24883415EDBB5F0053A1D0 /* IATCarouselTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0B21272215F02E2C0041A9C8 /* libIATBaseClasses.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libIATBaseClasses.a;
+			remoteRef = 0B21272115F02E2C0041A9C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0B21272415F02E2C0041A9C8 /* IATBaseClassesTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = IATBaseClassesTests.octest;
+			remoteRef = 0B21272315F02E2C0041A9C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0B24883315EDBB5F0053A1D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B24884415EDBB5F0053A1D0 /* InfoPlist.strings in Resources */,
+				0B24884D15EDBB5F0053A1D0 /* MainStoryboard_iPhone.storyboard in Resources */,
+				0B24885015EDBB5F0053A1D0 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B24883115EDBB5F0053A1D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B24884615EDBB5F0053A1D0 /* main.m in Sources */,
+				0B24884A15EDBB5F0053A1D0 /* IATAppDelegate.m in Sources */,
+				0BB1A88A15EDD0AB00402599 /* CarouselTestViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B21272615F02E960041A9C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IATBaseClasses;
+			targetProxy = 0B21272515F02E960041A9C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0B24884215EDBB5F0053A1D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B24884315EDBB5F0053A1D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0B24884B15EDBB5F0053A1D0 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B24884C15EDBB5F0053A1D0 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		0B24884E15EDBB5F0053A1D0 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B24884F15EDBB5F0053A1D0 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0B24885415EDBB5F0053A1D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0B24885515EDBB5F0053A1D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B24885715EDBB5F0053A1D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IATCarouselTest/IATCarouselTest-Prefix.pch";
+				INFOPLIST_FILE = "IATCarouselTest/IATCarouselTest-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0B24885815EDBB5F0053A1D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IATCarouselTest/IATCarouselTest-Prefix.pch";
+				INFOPLIST_FILE = "IATCarouselTest/IATCarouselTest-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B24882F15EDBB5F0053A1D0 /* Build configuration list for PBXProject "IATCarouselTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B24885415EDBB5F0053A1D0 /* Debug */,
+				0B24885515EDBB5F0053A1D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B24885615EDBB5F0053A1D0 /* Build configuration list for PBXNativeTarget "IATCarouselTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B24885715EDBB5F0053A1D0 /* Debug */,
+				0B24885815EDBB5F0053A1D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B24882C15EDBB5F0053A1D0 /* Project object */;
+}
