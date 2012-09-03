@@ -129,23 +129,15 @@ const CGFloat previousVelocityWeight = 0.75;
 	[self addSubview: self.containerView];
 	
 	[self buildContainerLookMatrix];
+	
+//	self.layer.borderColor = [UIColor redColor].CGColor;
+//	self.layer.borderWidth = 1;
 }
 
 - (void)buildContainerLookMatrix
 {
 	[[self containerView] tiltDegrees: 0.0f]; // [tiltSlider value]
 	[[self shadowContainerView] tiltDegrees: 0.0f];
-}
-
-- (NSArray*)visibleCells
-{
-	NSArray *visCells = [NSArray array];
-	for (IATCarouselTableViewCell *cell in self.cells)
-	{
-		if ([cell isKindOfClass:IATCarouselTableViewCell.class])
-			visCells = [visCells arrayByAddingObject:cell];
-	}
-	return visCells;
 }
 
 #pragma mark - Angle Property Animation
@@ -300,9 +292,11 @@ const CGFloat previousVelocityWeight = 0.75;
 	CGPoint location = [touch locationInView:self];
 	
 	CGFloat offset = (self.dragOrigin.x - location.x);
-	if (fabsf(offset) <= TOUCH_DETECT_DRAG_OFFSET_LIMIT)
-		return;
 	
+	if ((self.dragOffset < TOUCH_DETECT_DRAG_OFFSET_LIMIT) && [touch.view isKindOfClass:[IATCarouselTableViewCell class]]) {
+		offset = 0.0f;
+	}
+
 	NSUInteger numCells = [self.dataSource carouselView:self numberOfRowsInSection:0];
 	
 	IATCarouselData *data = [IATCarouselData shared];
@@ -337,11 +331,9 @@ const CGFloat previousVelocityWeight = 0.75;
 	self.offsetAngle = 0.0f;
 	
 	// detect small movements as touches
-	if ((self.dragOffset < TOUCH_DETECT_DRAG_OFFSET_LIMIT) && [touch.view isKindOfClass:[IATCarouselTableViewCell class]]) {
-	}
 	
 	[self updateDragOffset:location];
-	[self finalizeAngle: correction];
+	[self finalizeAngle: floorf(correction)];
 	
 	[self resetDragOffset];
 	
@@ -368,6 +360,7 @@ const CGFloat previousVelocityWeight = 0.75;
 
 - (void)viewOrientationChanged:(NSNotification *)note
 {
+	[self setNeedsLayout];
 }
 
 
@@ -417,7 +410,9 @@ const CGFloat previousVelocityWeight = 0.75;
 		CGFloat cellDegPos = self.degressPerCell * cellIdent;
 		CGFloat cellAngle = floor( startingOffset + cellDegPos + self.offsetAngle + [self.angleAccumulator floatValue] );
 		
+		// The cells array can contain NSNull objects.  When NSNull (ie: !IATCarouselTableViewCell.class)
 		if (![cell isKindOfClass:IATCarouselTableViewCell.class]) {
+			// if the cell is visible, we add it
 			if ((cellAngle >= minVisibleAngle) && (cellAngle <= maxVisibleAngle)) {
 				cell = [self addCellAtIndex:cellIdent];
 				if (!cell)
@@ -429,6 +424,7 @@ const CGFloat previousVelocityWeight = 0.75;
 				continue;
 			}
 		}
+		// if the cell is not visible, add it to the removal array
 		else if (cellAngle < minVisibleAngle) {
 			cellsToRemove = [cellsToRemove arrayByAddingObject:cell];
 			continue;
@@ -440,6 +436,9 @@ const CGFloat previousVelocityWeight = 0.75;
 		
 		IATCarouselTableViewCell *cellView = (IATCarouselTableViewCell *)cell;
 		
+		CGPoint c = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
+		[cellView setCenter: c];
+
 		CGPoint vLoc1 = CGPointMake( layoutCenter.s_vector.x + 5.0f,
 									layoutCenter.s_vector.z );
 		CGPoint vLoc2 = CGPointMake( layoutCenter.s_vector.x,
@@ -573,41 +572,7 @@ const CGFloat previousVelocityWeight = 0.75;
 //	NSLog(@"%@",self.cells);
 }
 
-
-#pragma mark - Public Interface Methods
-
-- (void)enqueCellForReuse:(IATCarouselTableViewCell*)cell
-{
-	if (![cell isKindOfClass:IATCarouselTableViewCell.class])
-		return;
-	
-	// remove all tracking of cells
-	[cell removeFromSuperview];
-#ifdef ENABLE_SHADOWS
-	[cell.cellReflectionView removeFromSuperview];
-#endif
-	
-	NSMutableArray * reuseArray = [self.cellReuseCache objectForKey:cell.reuseIdentifier];
-	if (!reuseArray)
-		reuseArray = [NSMutableArray arrayWithCapacity:self.cells.count];
-	
-	[reuseArray addObject:cell];
-	
-	if (!self.cellReuseCache)
-		self.cellReuseCache = [NSMutableDictionary dictionaryWithCapacity:1];
-	
-	[self.cellReuseCache setObject:reuseArray forKey:cell.reuseIdentifier];
-}
-
-- (void)enqueAllCellsForReuse
-{
-	// remove all tracking of cells
-	for (IATCarouselTableViewCell *cell in self.cells) {
-		if ([cell isKindOfClass:IATCarouselTableViewCell.class])
-			[self enqueCellForReuse:cell];
-	}
-	[self.cells removeAllObjects];
-}
+#pragma mark New cell insertion
 
 - (IATCarouselTableViewCell *)addCellAtIndex:(NSUInteger)idx
 {
@@ -661,93 +626,49 @@ const CGFloat previousVelocityWeight = 0.75;
 	return cell;
 }
 
-- (void)reloadData
+
+#pragma mark - Public Interface Methods
+
+#pragma mark Cell reuse
+
+- (void)enqueCellForReuse:(IATCarouselTableViewCell*)cell
 {
-	NSLog(@"reloadData");
+	// Prevent us from enqueing other view types since this gets called a lot
+	// using cells from the cells array that can contain NSNull objects.
+	if (![cell isKindOfClass:IATCarouselTableViewCell.class])
+		return;
 	
-	[self registerPrototypeCells];
+	// remove cell from view
+	[cell removeFromSuperview];
 	
-	NSUInteger numCells = [self.dataSource carouselView:self numberOfRowsInSection:0];
+#ifdef ENABLE_SHADOWS
+	[cell.cellReflectionView removeFromSuperview];
+#endif
 	
-	[self enqueAllCellsForReuse];
+	NSMutableArray * reuseArray = [self.cellReuseCache objectForKey:cell.reuseIdentifier];
+	if (!reuseArray)
+		reuseArray = [NSMutableArray arrayWithCapacity:self.cells.count];
 	
-	// Row display. Implementers should *always* try to reuse cells by setting each cell's
-	// reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-	// Cell  gets various attributes set automatically based on table (separators) and
-	// data source (accessory views, editing controls)
-	if (numCells == 0) {
-		
-	}
-	else {
-		IATCarouselData *data = [IATCarouselData shared];
-		NSUInteger visibleCells = [[data.layoutData valueForKey:kLayoutNumVisibleCells] unsignedIntegerValue];
-		
-		self.visibleRange = [data initialVisibleCellRange];
-		
-		self.degressPerCell = 360.0f / (visibleCells - 1);
-		
-		// NOTE: This will need to use an existing NSRange "window" of cells to
-		// reload only currently visible cells, or construct the range from
-		// scratch including only cells that are visible (but right now that
-		// determination is hard)
-		//		NSLog(@"reloadData %d", numCells);
-		
-		for (NSUInteger idx = 0; idx < numCells; idx++) {
-			if (!NSLocationInRange(idx, self.visibleRange))
-				continue;
-			
-			IATCarouselTableViewCell * cell = [self addCellAtIndex:idx];
-			
-			if (cell)
-				[self.cells addObject:cell];
+	[reuseArray addObject:cell];
+	
+	if (!self.cellReuseCache)
+		self.cellReuseCache = [NSMutableDictionary dictionaryWithCapacity:1];
+	
+	[self.cellReuseCache setObject:reuseArray forKey:cell.reuseIdentifier];
+}
+
+- (void)enqueAllCellsForReuse
+{
+	// remove all cells from active use and enque them for reuse
+	for (id cell in self.cells) {
+		// The cells array can contain NSNull objects, so we need to skip those
+		if ([cell isKindOfClass:IATCarouselTableViewCell.class]) {
+			NSUInteger cellIdx = [self.cells indexOfObject:cell];
+
+			[self enqueCellForReuse:cell];
+			[self.cells replaceObjectAtIndex:cellIdx withObject:[NSNull null]];
 		}
 	}
-	
-	[self setNeedsLayout];
-	
-	self.centralCellIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-	[self enableCellAtIndexPath:self.centralCellIndexPath];
-}
-
-- (NSIndexPath *)indexPathForCell:(IATCarouselTableViewCell *)cell
-{
-	NSUInteger row = [self.cells indexOfObject:cell];
-	// returns nil if cell is not visible
-	return [NSIndexPath indexPathForRow:row inSection:0];
-}
-
-- (IATCarouselTableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	// returns nil if cell is not visible or index path is out of range
-	if (indexPath.row >= self.cells.count)
-		return nil;
-	
-	id cell = [self.cells objectAtIndex:indexPath.row];
-	if (![cell isKindOfClass:IATCarouselTableViewCell.class])
-		return nil;
-	
-	return cell;
-}
-
-- (NSArray *)indexPathsForVisibleRows
-{
-	NSArray *visCells = [NSArray array];
-	for (IATCarouselTableViewCell *cell in self.cells)
-	{
-		if ([cell isKindOfClass:IATCarouselTableViewCell.class])
-			visCells = [visCells arrayByAddingObject:[self indexPathForCell:cell]];
-	}
-	return visCells;
-}
-
-- (NSIndexPath *)indexPathForSelectedRow
-{
-	return self.centralCellIndexPath;
-}
-
-- (IATCarouselTableViewCell *)selectedCell
-{
-	return [self cellForRowAtIndexPath:[self indexPathForSelectedRow]];
 }
 
 - (id)dequeueReusableCellWithIdentifier:(NSString *)identifier
@@ -772,6 +693,7 @@ const CGFloat previousVelocityWeight = 0.75;
 			return nil;
 		}
 		id cell = [NSKeyedUnarchiver unarchiveObjectWithData:cellArchive];
+
 		//		NSLog(@"%@", NSString FromCGAffineTransform(cell.transform));
 		return cell;
 	}
@@ -783,9 +705,9 @@ const CGFloat previousVelocityWeight = 0.75;
 	if (cell) {
 		[reuseableCells removeObject:cell];
 		
-//		NSData *cellArchive = [self.cellLookup objectForKey:identifier];
-//		cell = [NSKeyedUnarchiver unarchiveObjectWithData:cellArchive];
-//		return cell;
+		//		NSData *cellArchive = [self.cellLookup objectForKey:identifier];
+		//		cell = [NSKeyedUnarchiver unarchiveObjectWithData:cellArchive];
+		//		return cell;
 	}
 	
 	// reset the cell?
@@ -793,6 +715,118 @@ const CGFloat previousVelocityWeight = 0.75;
 	
 	return cell;
 }
+
+#pragma mark Cell loading
+
+- (void)reloadData
+{
+	NSLog(@"reloadData");
+	
+	[self registerPrototypeCells];
+	
+	NSUInteger numCells = [self.dataSource carouselView:self numberOfRowsInSection:0];
+	
+	[self enqueAllCellsForReuse];
+	
+	// Row display. Implementers should *always* try to reuse cells by setting each cell's
+	// reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+	// Cell  gets various attributes set automatically based on table (separators) and
+	// data source (accessory views, editing controls)
+	if (numCells) {
+		IATCarouselData *data = [IATCarouselData shared];
+		NSUInteger visibleCells = [[data.layoutData valueForKey:kLayoutNumVisibleCells] unsignedIntegerValue];
+		
+		self.visibleRange = [data initialVisibleCellRange];
+		
+		self.degressPerCell = 360.0f / (visibleCells - 1);
+		
+		// NOTE: This will need to use an existing NSRange "window" of cells to
+		// reload only currently visible cells, or construct the range from
+		// scratch including only cells that are visible (but right now that
+		// determination is hard)
+		//		NSLog(@"reloadData %d", numCells);
+		
+		for (NSUInteger idx = 0; idx < numCells; idx++) {
+			if (!NSLocationInRange(idx, self.visibleRange))
+				continue;
+			
+			IATCarouselTableViewCell * cell = [self addCellAtIndex:idx];
+			
+			if (cell)
+				[self.cells addObject:cell];
+		}
+	
+		[self setNeedsLayout];
+	}
+	
+	self.centralCellIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+	[self enableCellAtIndexPath:self.centralCellIndexPath];
+}
+
+#pragma mark Cell <--> NSIndexPath 
+
+- (NSIndexPath *)indexPathForCell:(IATCarouselTableViewCell *)cell
+{
+	NSUInteger row = [self.cells indexOfObject:cell];
+	// returns nil if cell is not visible
+	return [NSIndexPath indexPathForRow:row inSection:0];
+}
+
+- (IATCarouselTableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	// returns nil if cell is not visible or index path is out of range
+	if (indexPath.row >= self.cells.count)
+		return nil;
+	
+	id cell = [self.cells objectAtIndex:indexPath.row];
+
+	// The cells array can contain NSNull objects, so we need to protect against returning those
+	// An NSNull means that the cell is not visible, so we return nil
+	if (![cell isKindOfClass:IATCarouselTableViewCell.class])
+		return nil;
+	
+	return cell;
+}
+
+#pragma mark Cell Visibility Lists
+
+- (NSArray*)visibleCells
+{
+	NSArray *visCells = [NSArray array];
+	for (IATCarouselTableViewCell *cell in self.cells)
+	{
+		// The cells array can contain NSNull objects, so we need to skip those
+		if ([cell isKindOfClass:IATCarouselTableViewCell.class])
+			visCells = [visCells arrayByAddingObject:cell];
+	}
+	return visCells;
+}
+
+- (NSArray *)indexPathsForVisibleRows
+{
+	NSArray *visCells = [NSArray array];
+	for (IATCarouselTableViewCell *cell in self.cells)
+	{
+		// The cells array can contain NSNull objects, so we need to skip those
+		if ([cell isKindOfClass:IATCarouselTableViewCell.class])
+			visCells = [visCells arrayByAddingObject:[self indexPathForCell:cell]];
+	}
+	return visCells;
+}
+
+#pragma mark Central Cell
+
+- (NSIndexPath *)indexPathForSelectedRow
+{
+	return self.centralCellIndexPath;
+}
+
+- (IATCarouselTableViewCell *)selectedCell
+{
+	return [self cellForRowAtIndexPath:[self indexPathForSelectedRow]];
+}
+
+#pragma mark Proto Cell Registering
 
 // when a nib is registered, calls to dequeueReusableCellWithIdentifier: with the registered identifier will instantiate the cell from the nib if it is not already in the reuse queue
 - (void)registerNib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier
@@ -818,6 +852,9 @@ const CGFloat previousVelocityWeight = 0.75;
 	}
 }
 
+#pragma mark - Utilities
+
+// Currently unused velocity sampler - for future smoothing of velocity
 - (void)addVelocitySample:(CGFloat)velocitySample
 {
 	_currentDragVelocity *= previousVelocityWeight;
