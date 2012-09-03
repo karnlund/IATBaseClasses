@@ -430,12 +430,10 @@ const CGFloat previousVelocityWeight = 0.75;
 			}
 		}
 		else if (cellAngle < minVisibleAngle) {
-			[self dequeCellForReuse:cell];
 			cellsToRemove = [cellsToRemove arrayByAddingObject:cell];
 			continue;
 		}
 		else if (cellAngle > maxVisibleAngle) {
-			[self dequeCellForReuse:cell];
 			cellsToRemove = [cellsToRemove arrayByAddingObject:cell];
 			continue;
 		}
@@ -455,8 +453,7 @@ const CGFloat previousVelocityWeight = 0.75;
 		CATransform3D tangentMatrix;
 		
 		if (cellAngle == layoutCentralAngle)
-		{
-			
+		{			
 			// NOTE: When no touch/drag event is happening angleAccumulator, and offsetAngle are nil objects
 			CGPoint cellPosTan1 = [IATLayoutFunction2D pointOnVee: vLoc1
 														  axis: layoutAxisSizes
@@ -569,15 +566,17 @@ const CGFloat previousVelocityWeight = 0.75;
 	for (IATCarouselTableViewCell *cell in cellsToRemove) {
 		NSUInteger cellIdx = [self.cells indexOfObject:cell];
 		
+		[self enqueCellForReuse:cell];
 		[self.cells replaceObjectAtIndex:cellIdx withObject:[NSNull null]];
 	}
-	[self.cells removeObjectsInArray:cellsToRemove];
+	
+//	NSLog(@"%@",self.cells);
 }
 
 
 #pragma mark - Public Interface Methods
 
-- (void)dequeCellForReuse:(IATCarouselTableViewCell*)cell
+- (void)enqueCellForReuse:(IATCarouselTableViewCell*)cell
 {
 	if (![cell isKindOfClass:IATCarouselTableViewCell.class])
 		return;
@@ -600,12 +599,12 @@ const CGFloat previousVelocityWeight = 0.75;
 	[self.cellReuseCache setObject:reuseArray forKey:cell.reuseIdentifier];
 }
 
-- (void)dequeAllCellsForReuse
+- (void)enqueAllCellsForReuse
 {
 	// remove all tracking of cells
 	for (IATCarouselTableViewCell *cell in self.cells) {
 		if ([cell isKindOfClass:IATCarouselTableViewCell.class])
-			[self dequeCellForReuse:cell];
+			[self enqueCellForReuse:cell];
 	}
 	[self.cells removeAllObjects];
 }
@@ -670,7 +669,7 @@ const CGFloat previousVelocityWeight = 0.75;
 	
 	NSUInteger numCells = [self.dataSource carouselView:self numberOfRowsInSection:0];
 	
-	[self dequeAllCellsForReuse];
+	[self enqueAllCellsForReuse];
 	
 	// Row display. Implementers should *always* try to reuse cells by setting each cell's
 	// reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -784,12 +783,13 @@ const CGFloat previousVelocityWeight = 0.75;
 	if (cell) {
 		[reuseableCells removeObject:cell];
 		
-		NSData *cellArchive = [self.cellLookup objectForKey:identifier];
-		cell = [NSKeyedUnarchiver unarchiveObjectWithData:cellArchive];
-		return cell;
+//		NSData *cellArchive = [self.cellLookup objectForKey:identifier];
+//		cell = [NSKeyedUnarchiver unarchiveObjectWithData:cellArchive];
+//		return cell;
 	}
 	
 	// reset the cell?
+	[cell prepareForReuse];
 	
 	return cell;
 }
