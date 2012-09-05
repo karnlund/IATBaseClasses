@@ -330,8 +330,6 @@ const CGFloat previousVelocityWeight = 0.75;
 	
 	self.offsetAngle = 0.0f;
 	
-	// detect small movements as touches
-	
 	[self updateDragOffset:location];
 	[self finalizeAngle: floorf(correction)];
 	
