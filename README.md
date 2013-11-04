@@ -26,11 +26,13 @@ One of the key features of these carousel objects is that it's pretty easy to co
 ##Dependencies
 The carousel makes use of [Michael Tyson's (Tasty Pixel)](http://atastypixel.com/blog/ "Tasty Pixel") `TPPropertyAnimation`, with additional modifications from myself that add momentum-based animations. Any time a finger is lifted, the cells reposition to their final resting position using this animation object.
 
-_Some other interesting objects and their purposes_:
+##Some other interesting objects and their purposes##
 
-**`IATPerspectiveView`** : This view gives 3D perspective to it's subviews
+**`IATPerspectiveView`** 
+*  This view gives 3D perspective to it's subviews
 
-**`IATViewFader`** :	An object that controls the opacity of a view
+**`IATViewFader`**
+*  An object that controls the opacity of a view
 
 **`IATViewSizer`** : 		An object that controls the size of a view.  Optionally, this object also is intended to resize another view that is tied to the size of the main view.
 
