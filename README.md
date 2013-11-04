@@ -21,10 +21,12 @@ A UITableView presents a series of cells, all of which can be interacted with at
 
 Then **`IATCarouselTableView`** uses this data to generate the cell layout.
 
-One of the key features of these carousel objects is that it's pretty easy to configure the layout of the carousel. Currently the code uses a V shaped layout, but using a oval, or a circle, or a half circle, or even a bezier path should be quite easy. I've already switched between these numerous times with little difficulty. For simplicity the code assumes cell positions as if they were on a circle. So angles in the range of 0 to 360 are used to position all cells on whatever layout function it used. **Note:** Some 3D skills may be needed to calculate effective positions and orientations for each cell, but quite a few tricks with the layout functions (`IATLayoutFunction2d.h`) are available to simplify this.
+One of the key features of these carousel objects is that it's pretty easy to configure the layout of the carousel. Currently the code uses a V shaped layout, but using a oval, or a circle, or a half circle, or even a bezier path should be quite easy. I've already switched between these numerous times with little difficulty. For simplicity the code assumes cell positions as if they were on a circle. So angles in the range of 0 to 360 are used to position all cells on whatever layout function it used.
+
+**Note:** Some 3D skills may be needed to calculate effective positions and orientations for each cell, but quite a few tricks with the layout functions (**`IATLayoutFunction2d.h`**) are available to simplify this.
 
 ##Dependencies
-The carousel makes use of [Michael Tyson's (Tasty Pixel)](http://atastypixel.com/blog/ "Tasty Pixel") `TPPropertyAnimation`, with additional modifications from myself that add momentum-based animations. Any time a finger is lifted, the cells reposition to their final resting position using this animation object.
+The carousel makes use of [Michael Tyson's (Tasty Pixel)](http://atastypixel.com/blog/ "Tasty Pixel") **`TPPropertyAnimation`**, with additional modifications from myself that add momentum-based animations. Any time a finger is lifted, the cells reposition to their final resting position using this animation object.
 
 ##Some other interesting objects and their purposes##
 
@@ -34,15 +36,20 @@ The carousel makes use of [Michael Tyson's (Tasty Pixel)](http://atastypixel.com
 **`IATViewFader`**
 *  An object that controls the opacity of a view
 
-**`IATViewSizer`** : 		An object that controls the size of a view.  Optionally, this object also is intended to resize another view that is tied to the size of the main view.
+**`IATViewSizer`**
+*  An object that controls the size of a view.  Optionally, this object also is intended to resize another view that is tied to the size of the main view.
 
-**`IATViewHider`** : 	An object that controls the position of a view using one of it's edges as a hint to direction and offset (mostly hiding the view underneath another view).  Optionally, this object also is intended to resize another view that is tied to an edge of the main view.  As the main view moves, the subordinate view resizes to take up the space.
+**`IATViewHider`**
+*  An object that controls the position of a view using one of it's edges as a hint to direction and offset (mostly hiding the view underneath another view).  Optionally, this object also is intended to resize another view that is tied to an edge of the main view.  As the main view moves, the subordinate view resizes to take up the space.
 
-**`CATransformUtilities`** :	Printing CATransform3D
+**`CATransformUtilities`**
+*  Printing CATransform3D's
 
-**`CAVectorUtilties`** : 		3D vectors and associated utility functions
+**`CAVectorUtilties`**
+*  3D vectors and associated utility functions
 
-**`CGRectUtilities`** :		Useful CGRect functions
+**`CGRectUtilities`**
+*  Useful CGRect functions
 
 
 ##LICENSING:##
