@@ -58,5 +58,5 @@ The carousel makes use of [Michael Tyson's (Tasty Pixel)](http://atastypixel.com
 
 This source code is licensed under The MIT License.  I want you to be able to use this free of charge, with no obligation to me, other than a small attribution somewhere in your app or settings.  Please see the License.rtf file for licensing information and required attribution.  But to summarize, just include the above copyright statement in your application and we are all good.
 
-Kurt Arnlund
+Kurt Arnlund  
 [Ingenious Arts and Technologies LLC](http://www.iatapps.com>)
