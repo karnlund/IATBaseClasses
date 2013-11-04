@@ -55,7 +55,7 @@ The carousel makes use of [Michael Tyson's (Tasty Pixel)](http://atastypixel.com
 
 Make sure that the IATBaseClasses project is closed, then open the **`IATCarouselTest`** folder and to find the **`IATCarouselTest.xcodeproj`**.
 
-**`IATCarouselTest.xcodeproj`** contains a sample app that shows how a carousel is built on both iPhone and iPad.
+**`IATCarouselTest.xcodeproj`** contains a sample app that shows how a carousel is built on both iPhone and iPad.  Simply open it, select an iPad, or iPhone build, then press run.
 
 ##Licensing:##
 
