@@ -1,6 +1,6 @@
 #IATBaseClasses#
 
-##INFORMATION:##
+##About:##
 
 `IATBaseClasses` is a collection of objects that I use in my development of iOS apps.  These are utilities that have been developed over the past few years to provide convenience without creating a demand to include a lot of unnecessary code.  I've also been quite keen on not doing anything that I consider to be too perverse or evil.  That means no method swizzling, or dynamic property additions to other objects.  Those things may have a place, but they have no place anywhere here.
 
@@ -51,8 +51,13 @@ The carousel makes use of [Michael Tyson's (Tasty Pixel)](http://atastypixel.com
 **`CGRectUtilities`**
 *  Useful CGRect functions
 
+##Examples##
 
-##LICENSING:##
+Make sure that the IATBaseClasses project is closed, then open the **`IATCarouselTest`** folder and to find the **`IATCarouselTest.xcodeproj`**.
+
+**`IATCarouselTest.xcodeproj`** contains a sample app that shows how a carousel is built on both iPhone and iPad.
+
+##Licensing:##
 
 **Copyright (c) 2012 Ingenious Arts and Technologies LLC**
 
