@@ -6,7 +6,7 @@
 
 The primary objects of interest here will probably the ones the provide a **3D Carousel View**, and the utility methods that facilitate that view. The carousel is based on UITableView and it's related classes and protocols.
 
-##Here is how my classes related to the ones in UIKit:
+##Here is how my carousel classes relate to the classes in UIKit:
 
     IATCarouselTableViewCell        =>  UITableViewCell
     IATCarouselTableView            =>  UITableView
@@ -50,4 +50,4 @@ _Some other interesting objects and their purposes_:
 This source code is licensed under The MIT License.  I want you to be able to use this free of charge, with no obligation to me, other than a small attribution somewhere in your app or settings.  Please see the License.rtf file for licensing information and required attribution.  But to summarize, just include the above copyright statement in your application and we are all good.
 
 Kurt Arnlund
-<http://www.iatapps.com>
+[Ingenious Arts and Technologies LLC](http://www.iatapps.com>)
