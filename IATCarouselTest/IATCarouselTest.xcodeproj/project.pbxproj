@@ -16,6 +16,7 @@
 		0B24884A15EDBB5F0053A1D0 /* IATAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B24884915EDBB5F0053A1D0 /* IATAppDelegate.m */; };
 		0B24884D15EDBB5F0053A1D0 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B24884B15EDBB5F0053A1D0 /* MainStoryboard_iPhone.storyboard */; };
 		0B24885015EDBB5F0053A1D0 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B24884E15EDBB5F0053A1D0 /* MainStoryboard_iPad.storyboard */; };
+		0B982F4A18274DB600D4FD76 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B982F4918274DB600D4FD76 /* Default-568h@2x.png */; };
 		0BB1A88A15EDD0AB00402599 /* CarouselTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1A88915EDD0AB00402599 /* CarouselTestViewController.m */; };
 		0BB1A8A515EDD7E600402599 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB1A8A415EDD7E600402599 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		0B24884C15EDBB5F0053A1D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		0B24884F15EDBB5F0053A1D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		0B24886215EDBBE70053A1D0 /* IATBaseClasses.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IATBaseClasses.xcodeproj; path = ../IATBaseClasses.xcodeproj; sourceTree = "<group>"; };
+		0B982F4918274DB600D4FD76 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0BB1A88815EDD0AB00402599 /* CarouselTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselTestViewController.h; sourceTree = "<group>"; };
 		0BB1A88915EDD0AB00402599 /* CarouselTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselTestViewController.m; sourceTree = "<group>"; };
 		0BB1A8A415EDD7E600402599 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -91,6 +93,7 @@
 		0B24882A15EDBB5F0053A1D0 = {
 			isa = PBXGroup;
 			children = (
+				0B982F4918274DB600D4FD76 /* Default-568h@2x.png */,
 				0B24886215EDBBE70053A1D0 /* IATBaseClasses.xcodeproj */,
 				0B24883F15EDBB5F0053A1D0 /* IATCarouselTest */,
 				0B24883815EDBB5F0053A1D0 /* Frameworks */,
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B24884415EDBB5F0053A1D0 /* InfoPlist.strings in Resources */,
+				0B982F4A18274DB600D4FD76 /* Default-568h@2x.png in Resources */,
 				0B24884D15EDBB5F0053A1D0 /* MainStoryboard_iPhone.storyboard in Resources */,
 				0B24885015EDBB5F0053A1D0 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
@@ -329,6 +333,7 @@
 		0B24885715EDBB5F0053A1D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IATCarouselTest/IATCarouselTest-Prefix.pch";
 				INFOPLIST_FILE = "IATCarouselTest/IATCarouselTest-Info.plist";
@@ -344,6 +349,7 @@
 		0B24885815EDBB5F0053A1D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IATCarouselTest/IATCarouselTest-Prefix.pch";
 				INFOPLIST_FILE = "IATCarouselTest/IATCarouselTest-Info.plist";

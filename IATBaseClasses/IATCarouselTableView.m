@@ -830,7 +830,7 @@ const CGFloat previousVelocityWeight = 0.75;
 - (void)registerNib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier
 {
 	if (!self.cellNibLookup) {
-		self.cellNibLookup = [NSDictionary dictionaryWithObject:nib forKey:identifier];
+		self.cellNibLookup = [[NSDictionary dictionaryWithObject:nib forKey:identifier] mutableCopy];
 	}
 	else {
 		[self.cellNibLookup setValue:nib forKey:identifier];
